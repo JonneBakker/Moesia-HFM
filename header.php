@@ -74,8 +74,9 @@
 					<div class="welcome-desc wow bounceInRight" data-wow-delay="0.2s"><?php echo esc_html(get_theme_mod('header_desc')); ?></div>
 				<?php endif; ?>
 				<?php if (get_theme_mod('header_btn_text') && get_theme_mod('header_btn_link')) : ?>
-					<a href="<?php echo esc_url(get_theme_mod('header_btn_link')); ?>" class="welcome-button wow bounceInUp" data-wow-delay="0.3s"><?php echo esc_html(get_theme_mod('header_btn_text')); ?></a>
+					<a href="<?php echo esc_url(get_theme_mod('header_btn_link')); ?>" target="_blank" class="welcome-button wow bounceInUp" data-wow-delay="0.3s"><?php echo esc_html(get_theme_mod('header_btn_text')); ?></a>
 				<?php endif; ?>
+				<div class="welcome-arrow"><a href="#top-bar"></a></div>
 			</div>
 		<?php endif; ?>
 		<?php tha_header_bottom(); ?>
@@ -97,7 +98,7 @@
 					<div class="welcome-desc wow bounceInRight" data-wow-delay="0.2s"><?php echo esc_html($htext); ?></div>
 				<?php endif; ?>
 				<?php if ($hbutton && $hlink) : ?>
-					<a href="<?php echo esc_url($hlink); ?>" class="welcome-button wow bounceInUp" data-wow-delay="0.3s"><?php echo esc_html($hbutton); ?></a>
+					<a href="<?php echo esc_url($hlink); ?>" target="_blank" class="welcome-button wow bounceInUp" data-wow-delay="0.3s"><?php echo esc_html($hbutton); ?></a>
 				<?php endif; ?>
 			</div>
 			<?php tha_header_bottom(); ?>			

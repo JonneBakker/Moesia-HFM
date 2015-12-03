@@ -172,24 +172,15 @@ function moesia_scripts() {
 	wp_enqueue_style( 'moesia-style', get_stylesheet_uri() );
 
 	//Load the fonts
-	$headings_font = esc_html(get_theme_mod('headings_fonts'));
-	$body_font = esc_html(get_theme_mod('body_fonts'));
-	if( $headings_font ) {
-		wp_enqueue_style( 'moesia-headings-fonts', '//fonts.googleapis.com/css?family='. $headings_font );	
-	} else {
-		wp_enqueue_style( 'moesia-roboto-condensed', '//fonts.googleapis.com/css?family=Roboto+Condensed:700');
-	}	
-	if( $body_font ) {
-		wp_enqueue_style( 'moesia-body-fonts', '//fonts.googleapis.com/css?family='. $body_font );	
-	} else {
-		wp_enqueue_style( 'moesia-roboto', '//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic');
-	}
+	wp_enqueue_style( 'moesia-headings-fonts', '//fonts.googleapis.com/css?family=Lora:400,700,400italic');	
 
 	wp_enqueue_style( 'moesia-font-awesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );
 
 	wp_enqueue_script( 'moesia-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'moesia-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), true );
+
+	wp_enqueue_script( 'langdon-font', get_template_directory_uri() . '/fonts/langdon/specimen_files/easytabs.js');
 
 	if ( get_theme_mod('moesia_scroller') != 1 )  {
 		
@@ -301,9 +292,9 @@ add_filter( 'excerpt_length', 'moesia_excerpt_length', 999 );
  */
 if ( ! function_exists( 'moesia_nav_bar' ) ) {
 function moesia_nav_bar() {
-	echo '<div class="top-bar">
+	echo '<div class="top-bar" name="top-bar">
 			<div class="container">
-				<div class="site-branding col-md-4">';
+				<div class="site-branding col-xs-10 col-md-6">';
 				if ( get_theme_mod('site_logo') ) :
 					echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="';
 						bloginfo('name');
@@ -320,7 +311,7 @@ function moesia_nav_bar() {
 				endif;
 			echo '</div>';
 			echo '<button class="menu-toggle btn"><i class="fa fa-bars"></i></button>
-				<nav id="site-navigation" class="main-navigation col-md-8" role="navigation">';
+				<nav id="site-navigation" class="main-navigation col-xs-2 col-md-6" role="navigation">';
 				wp_nav_menu( array( 'theme_location' => 'primary' ) );
 			echo '</nav>';
 			

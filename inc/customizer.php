@@ -2290,67 +2290,11 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'moesia_typography',
         array(
-            'title' => __('Fonts', 'moesia' ),
+            'title' => __('Font sizes', 'moesia' ),
             'priority' => 15,
         )
     );
-    $font_choices = 
-        array(
-            'Source Sans Pro:400,700,400italic,700italic' => 'Source Sans Pro',     
-            'Droid Sans:400,700' => 'Droid Sans',
-            'Lato:400,700,400italic,700italic' => 'Lato',
-            'Arvo:400,700,400italic,700italic' => 'Arvo',
-            'Lora:400,700,400italic,700italic' => 'Lora',
-            'PT Sans:400,700,400italic,700italic' => 'PT Sans',
-            'PT+Sans+Narrow:400,700' => 'PT Sans Narrow',
-            'Arimo:400,700,400italic,700italic' => 'Arimo',
-            'Ubuntu:400,700,400italic,700italic' => 'Ubuntu',
-            'Bitter:400,700,400italic' => 'Bitter',
-            'Droid Serif:400,700,400italic,700italic' => 'Droid Serif',
-            'Open+Sans:400italic,700italic,400,700' => 'Open Sans',
-            'Roboto:400,400italic,700,700italic' => 'Roboto',
-            'Oswald:400,700' => 'Oswald',
-            'Open Sans Condensed:700,300italic,300' => 'Open Sans Condensed',
-            'Roboto Condensed:400italic,700italic,400,700' => 'Roboto Condensed',
-            'Raleway:400,700' => 'Raleway',
-            'Roboto Slab:400,700' => 'Roboto Slab',
-            'Yanone Kaffeesatz:400,700' => 'Yanone Kaffeesatz',
-            'Rokkitt:400' => 'Rokkitt',
-        );
-    
-    $wp_customize->add_setting(
-        'headings_fonts',
-        array(
-            'sanitize_callback' => 'moesia_sanitize_fonts',
-        )
-    );
-    
-    $wp_customize->add_control(
-        'headings_fonts',
-        array(
-            'type' => 'select',
-            'label' => __('Select your desired font for the headings.', 'moesia'),
-            'section' => 'moesia_typography',
-            'choices' => $font_choices
-        )
-    );
-    
-    $wp_customize->add_setting(
-        'body_fonts',
-        array(
-            'sanitize_callback' => 'moesia_sanitize_fonts',
-        )
-    );
-    
-    $wp_customize->add_control(
-        'body_fonts',
-        array(
-            'type' => 'select',
-            'label' => __('Select your desired font for the body.', 'moesia'),
-            'section' => 'moesia_typography',
-            'choices' => $font_choices
-        )
-    );
+
     //H1 size
     $wp_customize->add_setting(
         'h1_size',

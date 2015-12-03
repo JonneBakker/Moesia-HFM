@@ -121,7 +121,7 @@ class Moesia_Projects extends WP_Widget {
 						<div class="project-image">
 							<?php the_post_thumbnail('project-image'); ?>
 							<?php if ( $project_url ) : ?>
-								<a class="link-icon" href="<?php echo esc_url($project_url); ?>" title="<?php the_title(); ?>"><i class="fa fa-link"></i></a>
+								<a class="link-icon" href="<?php echo esc_url($project_url); ?>" target="_blank" title="<?php the_title(); ?>"><i class="fa fa-link"></i></a>
 							<?php else : ?>
 								<a class="link-icon" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-link"></i></a>
 							<?php endif; ?>

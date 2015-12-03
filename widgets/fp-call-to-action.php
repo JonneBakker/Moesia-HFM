@@ -117,7 +117,7 @@ class Moesia_Action extends WP_Widget {
 					</div>
 				<?php endif; ?>
 				<?php if ($action_btn_link !='') : ?>	
-					<a href="<?php echo esc_url($action_btn_link); ?>" class="call-to-action wow zoomInUp"><?php echo esc_html($action_btn_text); ?></a>
+					<a href="<?php echo esc_url($action_btn_link); ?>" target="_blank" class="call-to-action wow zoomInUp"><?php echo esc_html($action_btn_text); ?></a>
 				<?php endif; ?>
 			</div>
 		<?php if ($image_uri != '') : ?>
